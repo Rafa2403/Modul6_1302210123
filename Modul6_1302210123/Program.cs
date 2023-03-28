@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
+
 class SayaTubeVideo
 {
     private int id;
@@ -43,6 +45,11 @@ class SayaTubeUser
     private List<SayaTubeVideo> uploadedVideos;
     public string Username;
 
+    public void testvideolength()
+    {
+
+    }
+
     public SayaTubeUser(string Username)
     {
         Random random= new Random();
@@ -64,6 +71,7 @@ class SayaTubeUser
 
     public void AddVideo(SayaTubeVideo video)
     {
+        Debug.Assert(!this.uploadedVideos.Contains(video), "Video Kosong");
         this.uploadedVideos.Add(video);
     }
 
